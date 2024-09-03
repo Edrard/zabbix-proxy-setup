@@ -22,19 +22,19 @@ if [[ ${REPLY} =~ ^[nN]$ ]]; then
   # Passive proxy
   echo "Configuring passive proxy"
   PASSIVE_PROXY="1"
-  read -p "Enter Zabbix server hostnames comma separated: " SERVER_HOST
+  read -p "Enter Zabbix server hostnames comma separated Press enter to keep zabbix.vamark.net,zabbix.vamark.com,45.83.176.156: " SERVER_HOST
+  if [ -z $SERVER_HOST ]
+  then
+      SERVER_HOST="zabbix.vamark.net,zabbix.vamark.com,45.83.176.156"
+  fi
 else
+
   read -p "Enter Zabbix server hostname: " SERVER_HOST
   read -p "Enter Zabbix server port: " SERVER_PORT
 fi
 
-read -p "Enable SNMP traps (Y/n)?" -n 1 -r
-echo
-if [[ ${REPLY} =~ ^[nN]$ ]]; then
-  echo "ZBX_ENABLE_SNMP_TRAPS=false" >>env.list
-else
-  echo "ZBX_ENABLE_SNMP_TRAPS=true" >>env.list
-fi
+echo "ZBX_ENABLE_SNMP_TRAPS=false" >>env.list
+
 
 
 
