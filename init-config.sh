@@ -36,13 +36,6 @@ else
   echo "ZBX_ENABLE_SNMP_TRAPS=true" >>env.list
 fi
 
-read -p "Use Source IP (Y/n)?" -n 1 -r
-echo
-if [[ ${REPLY} =~ ^[yY]$ ]]; then
-  read -p "Enter SourceIP: " sip
-  echo "ZBX_SOURCEIP=${sip}" >>env.list
-fi
-
 
 
 safe_mkdir zabbix
@@ -61,7 +54,7 @@ safe_mkdir zabbix/ssl/ssl_ca
 touch zabbix/odbcinst.ini
 touch zabbix/odbc.ini
 
-echo "ubuntu-7.0.3" >zabbix/container.version
+echo "ubuntu-7.0-latest" >zabbix/container.version
 
 echo "ZBX_HOSTNAME=${HOSTNAME}" >>env.list
 if [ -z "$PASSIVE_PROXY" ]; then
