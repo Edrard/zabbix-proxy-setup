@@ -19,9 +19,6 @@ services:
       - ./zabbix/ssl/certs:/var/lib/zabbix/ssl/certs:z
       - ./zabbix/ssl/keys:/var/lib/zabbix/ssl/keys:z
       - ./zabbix/ssl/ssl_ca:/var/lib/zabbix/ssl/ssl_ca:z
-    links:
-      - zabbix-java-gateway
-      - zabbix-snmptraps
     env_file:
       - env.list
 
