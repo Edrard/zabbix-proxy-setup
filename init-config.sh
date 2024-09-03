@@ -38,7 +38,7 @@ fi
 
 read -p "Use Source IP (Y/n)?" -n 1 -r
 echo
-if [[ ${REPLY} =~ ^[nN]$ ]]; then
+if [[ ${REPLY} =~ ^[yY]$ ]]; then
   read -p "Enter SourceIP: " sip
   echo "ZBX_SOURCEIP=${sip}" >>env.list
 fi

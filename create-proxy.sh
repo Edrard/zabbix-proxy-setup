@@ -42,3 +42,4 @@ touch zabbix/snmptraps/snmptraps.log
 chmod g+w zabbix/snmptraps/snmptraps.log
 
 docker-compose up --no-start
+docker start zabbix-proxy
