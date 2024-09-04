@@ -14,3 +14,4 @@ curl -SL https://github.com/docker/compose/releases/download/v2.10.0/docker-comp
 chmod +x ${folder}/cli-plugins/docker-compose
 
 ln -fs ${folder}/cli-plugins/docker-compose /usr/local/bin/docker-compose
+
